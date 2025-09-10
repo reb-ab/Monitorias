@@ -93,20 +93,39 @@ desconto = salario - (salario* 11/100) - (salario* 8/100) - (salario* 5/100)
 print('você irá receber:', desconto)
 
 # 16
-lata_tinta = 18 #litros
-parede = float(input('qual tamanho da área: ').replace(',','.'))
+import math
 
-capacidade_tinta = parede *3 #1 litro pinta 3 paredes
-if capacidade_tinta > lata_tinta : # a parede é maior que o tanto de tinta
-    lata_tinta += lata_tinta
-    
-lata = lata_tinta/18
-valor = lata * 80
+lata_tinta = 18
+area = int(input('quantos mestros: '))
+lata_uso = math.ceil(area / lata_tinta)
+valor = lata_uso * 80
 
-print('o tocal de latas é:', lata, 'o total gasto é:', valor )
+print('você precisa de: ',lata_uso)
+print('você gastará: ',valor)
 
 # 17
+import math
 
+lata_tinta = 18
+galao_tinta = 3.6
+area = int(input('quantos mestros: '))
+
+lata_uso = math.ceil(area / lata_tinta)
+valor_lata = lata_uso * 80
+print('apenas latas de tinhas:', lata_uso, '| total: ', valor_lata)
+
+galao_uso = math.ceil(area / galao_tinta)
+valor_galao = galao_uso * 25
+print('apenas galões de tinta:', galao_uso, '| total: ',valor_galao)
+
+lata_uso_alterado = (area // lata_tinta)
+galao_uso_altesrado = math.ceil(area % lata_tinta)
+
+valor_lata = lata_uso_alterado * 80
+valor_galao = galao_uso_altesrado * 25
+print('comprando latas e galões')
+print('latas:', lata_uso_alterado, '| total:', valor_lata)
+print('galões:', galao_uso_altesrado, '| total:', valor_galao)
 
 # 18
 mbyte_arquivo= float(input('qual o tamanho do arquivo [em MB]: '))
